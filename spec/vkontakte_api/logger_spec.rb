@@ -16,7 +16,6 @@ describe VkontakteApi::Logger do
     Faraday.new(url: 'http://example.com') do |builder|
       builder.request  :url_encoded
       builder.response :vk_logger
-      builder.response :mashify
       builder.response :multi_json, preserve_raw: true
       
       builder.adapter :test do |stub|
