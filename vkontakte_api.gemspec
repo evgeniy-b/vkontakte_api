@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   
   s.required_ruby_version = '>= 1.9.2'
   
-  s.add_runtime_dependency 'faraday',                        '>= 0.9.0'
+  s.add_runtime_dependency 'faraday',                        '>= 1.0.0'
   s.add_runtime_dependency 'faraday_middleware',             '>= 0.9.1'
   unless defined?(JRUBY_VERSION)
     s.add_runtime_dependency 'oj',                           '>= 2.12'
