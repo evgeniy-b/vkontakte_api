@@ -11,7 +11,7 @@ module VkontakteApi
       # @param [String] method_name A full name of the method.
       # @param [Hash] args Method arguments.
       # @param [String] token The access token.
-      # @return [Hashie::Mash] Mashed server response.
+      # @return [Hash] Server response.
       # @raise [ArgumentError] raised when the API version is not set.
       def call(method_name, args = {}, token = nil)
         if VkontakteApi.api_version.nil?

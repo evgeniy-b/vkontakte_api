@@ -35,15 +35,9 @@ describe VkontakteApi::Resolver do
     
     let(:resolver) { @resolver.resolver }
     
-    it "returns a Hashie::Mash with a name and a token" do
-      expect(resolver.name).to  eq(@name)
-      expect(resolver.token).to eq(@token)
-    end
-    
-    it "caches the result" do
-      @mash = double("Mash", name: @name, token: @token)
-      expect(Hashie::Mash).to receive(:new).once.and_return(@mash)
-      5.times { @resolver.resolver }
+    it "returns a Hash with a name and a token" do
+      expect(resolver[:name]).to  eq(@name)
+      expect(resolver[:token]).to eq(@token)
     end
   end
 end

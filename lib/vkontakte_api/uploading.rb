@@ -6,7 +6,7 @@ module VkontakteApi
     # Files uploading. It uses the same faraday middleware stack as API method calls (by using `VkontakteApi::API.connection`).
     # @param [Hash] params A list of files to upload (also includes the upload URL). See example for the hash format.
     # @option params [String] :url URL for the request.
-    # @return [Hashie::Mash] The server response.
+    # @return [Hash] The server response.
     # @raise [ArgumentError] raised when a `:url` parameter is omitted.
     # @example
     #   VkontakteApi.upload(

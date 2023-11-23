@@ -1,10 +1,10 @@
 module VkontakteApi
   # A mixin for classes that will resolve other classes' objects via `#method_missing`.
   module Resolver
-    # A `Hashie::Mash` structure holding the name and token of current instance.
-    # @return [Hashie::Mash]
+    # A `Hash` structure holding the name and token of current instance.
+    # @return [Hash]
     def resolver
-      @resolver ||= Hashie::Mash.new(name: @name, token: token)
+      @resolver ||= {name: @name, token: token}
     end
     
   private

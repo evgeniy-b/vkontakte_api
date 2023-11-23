@@ -5,10 +5,10 @@ module VkontakteApi
   module Result
     class << self
       # The main method result processing.
-      # @param [Hashie::Mash] response The server response in mash format.
+      # @param [Hash] response The server response.
       # @param [Symbol] type The expected result type (`:boolean` or `:anything`).
       # @param [Proc] block A block passed to the API method.
-      # @return [Array, Hashie::Mash] The processed result.
+      # @return [Array, Hash] The processed result.
       # @raise [VkontakteApi::Error] raised when VKontakte returns an error response.
       def process(response, type, block)
         result = extract_result(response)

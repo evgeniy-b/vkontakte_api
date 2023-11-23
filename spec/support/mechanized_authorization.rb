@@ -44,13 +44,9 @@ module MechanizedAuthorization
     end
     
     def settings
-      @settings ||= Hashie::Mash.new(settings_hash)
+      @settings ||= YAML.load_file(credentials_path)
     end
-    
-    def settings_hash
-      YAML.load_file(credentials_path)
-    end
-    
+
     def credentials_path
       File.expand_path('../credentials.yml', __FILE__)
     end

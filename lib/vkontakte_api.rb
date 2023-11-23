@@ -4,7 +4,6 @@ require 'oj' unless defined?(JRUBY_VERSION)
 require 'faraday_middleware/multi_json'
 require 'oauth2'
 require 'yaml'
-require 'hashie'
 
 require 'vkontakte_api/version'
 require 'vkontakte_api/error'

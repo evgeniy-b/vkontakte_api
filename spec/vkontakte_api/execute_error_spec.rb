@@ -3,21 +3,21 @@ require 'spec_helper'
 describe VkontakteApi::ExecuteError do
   let(:errors_data) do
     [
-      Hashie::Mash.new(
-        method:     'status.get',
-        error_code: 15,
-        error_msg:  'Access denied: no access to call this method'
-      ),
-      Hashie::Mash.new(
-        method:     'photos.get',
-        error_code: 100,
-        error_msg:  'One of the parameters specified was missing or invalid: album_id is invalid'
-      ),
-      Hashie::Mash.new(
-        method:     'execute',
-        error_code: 100,
-        error_msg:  'One of the parameters specified was missing or invalid: album_id is invalid'
-      )
+      {
+        'method' => 'status.get',
+        'error_code' => 15,
+        'error_msg' => 'Access denied: no access to call this method'
+      },
+      {
+        'method' => 'photos.get',
+        'error_code' => 100,
+        'error_msg' => 'One of the parameters specified was missing or invalid: album_id is invalid'
+      },
+      {
+        'method' => 'execute',
+        'error_code' => 100,
+        'error_msg' => 'One of the parameters specified was missing or invalid: album_id is invalid'
+      }
     ]
   end
 

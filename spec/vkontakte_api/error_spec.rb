@@ -2,24 +2,24 @@ require 'spec_helper'
 
 describe VkontakteApi::Error do
   let(:error_data) do
-    Hashie::Mash.new(
-      error_code: 5,
-      error_msg:  'User authorization failed: invalid access_token.',
-      request_params: [
+    {
+      'error_code' => 5,
+      'error_msg' => 'User authorization failed: invalid access_token.',
+      'request_params' => [
         {
-          key:   'oauth',
-          value: '1'
+          'key' => 'oauth',
+          'value' => '1'
         },
         {
-          key:   'method',
-          value: 'unknownMethod'
+          'key' => 'method',
+          'value' => 'unknownMethod'
         },
         {
-          key:   'access_token',
-          value: '123'
+          'key' => 'access_token',
+          'value' => '123'
         }
       ]
-    )
+    }
   end
 
   subject { VkontakteApi::Error.new(error_data) }
@@ -38,7 +38,7 @@ describe VkontakteApi::Error do
     
     context "with parameters" do
       before(:each) do
-        error_data[:request_params] << Hashie::Mash.new(key: 'some', value: 'params')
+        error_data['request_params'] << { 'key' => 'some', 'value' => 'params' }
       end
       
       it "returns all needed data about an error" do
@@ -53,7 +53,7 @@ describe VkontakteApi::Error do
 
     context "for interval server error without request_params" do
       let(:error_data) do
-        Hashie::Mash.new(error_code: 11, error_msg: 'Internal server error: Unknown error, try later')
+        {'error_code' => 11, 'error_msg' => 'Internal server error: Unknown error, try later'}
       end
 
       it "returns all needed data about an error" do

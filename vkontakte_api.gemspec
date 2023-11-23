@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency 'oj',                           '>= 2.12'
   end
   s.add_runtime_dependency 'oauth2',                         '~> 1.1'
-  s.add_runtime_dependency 'hashie',                         '>= 2.0'
   s.add_runtime_dependency 'multi_json',                     '>= 1.3'
   s.add_runtime_dependency 'faraday_middleware-multi_json',  '~> 0.0.6'
   

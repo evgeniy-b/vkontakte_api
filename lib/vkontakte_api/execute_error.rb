@@ -13,8 +13,8 @@ module VkontakteApi
       message = 'VKontakte returned the following errors:'
 
       @errors.each do |error|
-        message << "\n * Code #{error[:error_code]}: '#{error[:error_msg]}'"
-        message << "\n   after calling method '#{error[:method]}'."
+        message << "\n * Code #{error['error_code']}: '#{error['error_msg']}'"
+        message << "\n   after calling method '#{error['method']}'."
       end
 
       message
